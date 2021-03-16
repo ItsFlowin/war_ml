@@ -4,10 +4,9 @@ import numpy as np
 import pandas as pd 
 
 # Load the Pickled model
-with open('WAR_Pickle', 'rb') as model:
-    mp=pickle.load(model)
-
 app = Flask(__name__)
+
+mp = pickle.load(open('WAR_Pickle', 'rb'))
 
 @app.rout("/", methods=["GET","POST"])
 def home():
