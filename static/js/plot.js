@@ -1,4 +1,6 @@
-function create_bar_plot(warscore)    
+var barChart = document.getElementById('warscore');
+
+function create_bar_plot(score)    
     var barData =[{
         x:['Players Age', 'Players Salary','Team Win Percentage', 'Percent Contract Complete', 'Number of DL Trips'],
         y:[0,0,0,0,0],
