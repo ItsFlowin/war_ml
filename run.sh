@@ -1,0 +1,1 @@
+FLASK_APP=WAR_ML/app.py flask run
