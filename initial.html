@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAR Predictor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 jumbotron text-center" style="background-image: url('https://i.ibb.co/RbQt9Q1/baseball-2617310.jpg');
+                    background-size: cover; background-position: center; color: white; height: 500px;">
+                    <h1>WAR Predictor</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="Player Input">
+                        <h2>Enter your Player’s Age, Salary, Team Win Percentage, Percent Contract Complete, and Number of DL Trips </h2>
+                        <p>
+                            <form method="POST" action="/" role="form", name="petform">
+                                    
+                                    <!--Players Age-->
+                                    <label for="personAge">Enter the Player's Age:</label>
+                                    <input type="text" class="form-control" id="inputAge" name="selectAge" placeholder="Age" minlength="2", maxlength="2" size="10" required>
+                                    <span class="validity"></span>
+                                    <div><br></div>
+                                    <div>
+                                        <!--Player's Salary-->
+                                        <label for="personSalary">Enter the Player's Salary:</label>
+                                        <input type="text" class="form-control" id="inputSalary" name="selectSalary" placeholder="Salary" minlength="5", maxlength="10" size="10" required>
+                                        <span class="validity"></span>
+                                        <div><br></div>
+                                    </div>
+
+                                    <!--Team Win Percentage-->
+                                    <div>
+                                        <label for="teamwinPercent">Enter the Player's Team Win Percentage</label>
+                                        <input type="range" min="1" max="100" value="50" class="form-control" id="inputwinPer" name = "selectWins"placeholder="Wins" required>
+                                        <p>Percentage: <span id="percent"></span></p>
+                                        <span class="validity"></span>
+                                        <div><br></div>
+                                    </div>
+
+                                    <!--Percent Contract Complete-->
+                                    <div>
+                                        <label for="percentcontractComplete">Enter the Player's Contract Complete Percentage:</label>
+                                        <input type="text" class="form-control" id="inputContract" name="selectContract" placeholder="Contract" minlength="2", maxlength="2" size="2" required>
+                                        <span class="validity"></span>
+                                        <div><br></div>
+                                    </div>
+
+                                    <!--Number DL Trips-->
+                                    <div>
+                                        <label for="dlTrips">Enter the Player's Number of DL Trips:</label>
+                                        <input type="text" class="form-control" id="inputDL" name="selectDL" placeholder="DL" minlength="1", maxlength="2" size="2" required>
+                                        <span class="validity"></span>
+                                        <div><br></div>
+                                    </div>
+                                    <!--Submit Button-->
+                                    <div>
+                                        <input type="submit" value="Submit" class="btn btn-default">
+                                        <a class="btn btn-primary" id="resetButton" role="button" style="background-color: grey; border: none; color:white;">Reset</a>
+                                    </div>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var slider = document.getElementById("inputwinPer");
+        var output = document.getElementById("percent");
+        output.innerHTML = slider.value;
+        
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+        </script>
+</body>
+</html>
