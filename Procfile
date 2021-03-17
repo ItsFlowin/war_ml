@@ -1,1 +1,1 @@
-web: gunicorn war_score.app:app
+web: gunicorn app:app

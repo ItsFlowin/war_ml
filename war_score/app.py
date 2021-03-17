@@ -29,7 +29,7 @@ def home():
         user_contract = usercontract*0.01
         user_salary = np.log(user_salary)
 
-        # Place user inputs into a list and create dataframe for label encoding
+        # Place user inputs into an array and create dataframe for label encoding
         inputs = [user_age, user_salary, user_wins, user_contract, user_dl]
         inputs_pd = pd.DataFrame([inputs])
 
